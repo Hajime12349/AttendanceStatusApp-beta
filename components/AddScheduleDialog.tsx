@@ -163,8 +163,9 @@ export default function AddScheduleDialog({ open, handleClose }: Props) {
                             {currentCategory === ScheduleCategories.EVENT && (
                                 <form onSubmit={eventHandleSubmit(onSubmitEvent)}>
                                     <Stack spacing={3} className="mt-10">
-                                        <Alert severity="warning" className="">(2023/10/04) 追加後、アプリから削除・変更ができないため、登録するときは注意すること</Alert>
-
+                                        {
+                                            //<Alert severity="warning" className="">(2023/10/04) 追加後、アプリから削除・変更ができないため、登録するときは注意すること</Alert>
+                                        }
                                         <DateProvider>
                                             <Controller name="title" control={eventControl} rules={{ required: { value: true, message: "Title is required" } }}
                                                 render={({ field, fieldState }) => (

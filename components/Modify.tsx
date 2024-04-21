@@ -23,6 +23,9 @@ export default function BasicPopover({ date, eventTitle, isCancel, onButtonClick
     
     const [anchorEl, setAnchorEl] = useState<EventTarget & HTMLButtonElement | null>(null);
 
+    const [color,setColor] = useState("bg-indigo-200")
+    const eventCss="rounded-md px-3 py-1"
+
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
@@ -80,9 +83,12 @@ export default function BasicPopover({ date, eventTitle, isCancel, onButtonClick
                 (<Box 
                     key={eventTitle}
                     className="mb-2"
+                    onMouseEnter={()=>setColor("bg-indigo-400")}
+                    onMouseLeave={()=>setColor("bg-indigo-200")}
                     onClick={handleClick}>
                     <Typography
-                        className={"rounded-md bg-indigo-200 px-3 py-1"}
+                        className={"rounded-md "+color+" px-3"}
+                        
                     >
                         {eventTitle}
                     </Typography>
