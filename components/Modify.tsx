@@ -88,7 +88,6 @@ export default function BasicPopover({ date, eventTitle, isCancel, onButtonClick
                     onClick={handleClick}>
                     <Typography
                         className={"rounded-md "+color+" px-3"}
-                        
                     >
                         {eventTitle}
                     </Typography>
